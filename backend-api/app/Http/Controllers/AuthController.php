@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //panggil model User
 use App\Models\User;
-//untuk autentikasi login 
-use Illuminate\Support\Facades\Auth;
 //untuk hash password 
 use Illuminate\Support\Facades\Hash;
 //untuk validasi
@@ -80,12 +78,5 @@ class AuthController extends Controller
          
          return response()->json(['message' => 'logout sukses'], 200);
        }
-    }
-    
-    public function getAuthenticatedUser() 
-    {
-      return response()->json([
-        'userToken' => $request->user
-      ], 200);
     }
 }
